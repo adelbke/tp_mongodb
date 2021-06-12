@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    some-mongo:
+        image: mongo:latest
+        volumes:
+            - './:/data'
+        ports: 
+            - '27017:27017'
+        command: ['mongod'] 
+        # mongoimport --db new_york --collection restaurants /data/restaurants.json 

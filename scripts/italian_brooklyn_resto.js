@@ -1,0 +1,1 @@
+db.getCollection('restaurants').find({'borough':'Brooklyn','cuisine':'Italian'},{'name':1})
