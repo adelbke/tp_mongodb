@@ -1,0 +1,10 @@
+db.restaurants.aggregate([
+    {
+        $unwind:'$grades'
+    },
+    {
+        $group:{
+            _id:'$grades.grade'
+        }
+    }
+])
