@@ -16,5 +16,15 @@ db.restaurants.aggregate([
             cond: { $lt: ['$$item.score', 10]}
         }},
         name:'$name'
-    }}
+    }},
+    {
+        $match:{'grades':1}
+    }
 ])
+
+// most simple and correct
+
+db.restaurants.find({
+    "borough":"Manhattan",
+    "grades.score":{"$not":{"$gt":5}}
+    })
